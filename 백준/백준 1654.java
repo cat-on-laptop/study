@@ -22,7 +22,7 @@ public class 백준 1654{
 	}
 	
 	static boolean isOk(long l) {
-		// l의 길이만큼 랜선들을 자를 때, 문제의 요구조건인 N개를 넘을 수 있는지를 리
+		// l의 길이만큼 랜선들을 자를 때, 문제의 요구조건인 N개를 넘을 수 있는지를 리턴
 		int tot = 0;
 		for(int i = 0; i < K; ++i) tot += arr[i] / l;
 		
@@ -31,7 +31,7 @@ public class 백준 1654{
 	
 	static long parametricSearch() {
 		// 랜선의 길이를 매개로 하여 랜선을 자를 때 
-		// 가능한 최대의 길이 리턴하는 이분탐
+		// 가능한 최대의 길이 리턴하는 이분탐색
 		long l = 0, r = (1 << 31) - 1, ans = -1;
 		while (l <= r) {
 			long mid = l + ((r - l) >> 1);
