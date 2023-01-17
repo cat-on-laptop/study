@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class 백준1654{
+public class 백준 1654{
 	static StringTokenizer st;
 	static StringBuilder sb = new StringBuilder();
 	static int K, N;
