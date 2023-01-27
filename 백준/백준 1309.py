@@ -1,7 +1,7 @@
 # 백준 1309
 
 import sys
-sys.stdin = open("./test/input.txt", "r")
+# sys.stdin = open("./test/input.txt", "r")
 
 si = sys.stdin.readline
 
