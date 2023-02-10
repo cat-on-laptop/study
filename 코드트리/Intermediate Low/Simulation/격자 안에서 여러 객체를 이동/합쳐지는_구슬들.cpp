@@ -48,6 +48,16 @@ char flip(char d) {
     if(d == 'L') return 'R';
     if(d == 'R') return 'L';
 }
+void print1(){
+    for(int i = 0; i < n; ++i) {
+        for(int j = 0; j < n; ++j) {
+            if (temp[i][j] == none) cout << "none ";
+            else cout << "<#" << temp[i][j].num << ", " << temp[i][j].weight << ", " << temp[i][j].dir << "> ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+}
 
 void simulate() {
     // 시뮬레이션 하기 전에 temp 배열을 초기화
@@ -57,6 +67,7 @@ void simulate() {
     for(int i = 0; i < n; ++i) {
         for(int j = 0; j < n; ++j){
             if(arr[i][j] != none) {
+                // cout << "curr is <" << arr[i][j].num << ", "<<arr[i][j].weight << ", " <<arr[i][j].dir <<">\n";
                 int d = mapper[arr[i][j].dir];
                 int nr = i + dir[d][0], nc = j + dir[d][1];
 
@@ -67,7 +78,7 @@ void simulate() {
                     else {
                         // 범위를 벗어나고 temp가 차 있는 경우 번호가 큰 구슬의 번호와 방향을 temp로
                         if (temp[i][j] > arr[i][j]) {
-                            temp[i][j] = marble(temp[j][i].num, temp[i][j].weight + arr[i][j].weight, temp[i][j].dir);
+                            temp[i][j] = marble(temp[i][j].num, temp[i][j].weight + arr[i][j].weight, temp[i][j].dir);
                         }
                         else {
                             temp[i][j] = marble(arr[i][j].num, temp[i][j].weight + arr[i][j].weight, flip(arr[i][j].dir));
@@ -88,6 +99,7 @@ void simulate() {
                     }
                     else temp[nr][nc] = arr[i][j];
                 }
+                // print1();
             }
         }
     }
@@ -106,12 +118,14 @@ void print(){
         }
         cout << endl;
     }
+    cout << endl;
 }
 
 int main() {
     mapper['U'] = 0, mapper['D'] = 1, mapper['L'] = 2, mapper['R'] = 3;
+    // freopen("input.txt", "r", stdin);
+    // freopen("output.txt", "w", stdout);
     cin >> n >> m >> t;
-
     for(int i = 0; i < m; ++i) {
         int row, col, weight; char dir;
         cin >> row >> col >> dir >> weight;
@@ -120,12 +134,11 @@ int main() {
     }
 
     // print();
-    // cout << endl;
     for(int i = 0; i < t; ++i) {
         // simulate
         simulate();
         // print();
-        // cout << endl;
+
     }
 
     int cnt = 0, val = 0;

@@ -1,0 +1,8 @@
+<#1, 10, R> none none none none none 
+<#8, 5, U> none <#5, 3, D> none none <#10, 4, D> 
+none none none none <#6, 4, D> <#3, 10, R> 
+none none <#9, 6, U> none none <#4, 6, U> 
+none none none none none none 
+none none none none <#2, 2, R> <#7, 1, U> 
+
+6 21
