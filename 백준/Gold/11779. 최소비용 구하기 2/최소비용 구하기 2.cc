@@ -66,12 +66,11 @@ int main() {
         temp = parent[temp];
         path.push_back(temp);
     }
-    path.pop_back();
     
     // output
     printf("%d\n", dist[end]);
     printf("%d\n", cnt);
-    for(vector<int>::reverse_iterator iter = path.rbegin(); iter != path.rend(); ++iter) printf("%d ", *iter);
+    for(vector<int>::reverse_iterator iter = path.rbegin() + 1; iter != path.rend(); ++iter) printf("%d ", *iter);
 
     return 0;
 }
