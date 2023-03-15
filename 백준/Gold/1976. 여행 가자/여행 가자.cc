@@ -1,10 +1,7 @@
-// union-find
-// path compression + union by rank -> O(alpha(n))
-
 #include <cstdio>
 
 int n, m;
-int parent[205], arr[1005], rank[205];
+int parent[205], arr[1005];
 
 int find(int x){
     // 타고 올라가서 반환
@@ -13,22 +10,9 @@ int find(int x){
 }
 
 void Union(int x, int y){
-    // x와 y를 합집합
+    // x를 y아래로
     int px = find(x), py = find(y);
-    
-    if(px == py) return;
-
-    if(rank[px] < rank[py]) {
-        parent[px] = py;
-    }
-    else if(rank[px] > rank[py]) {
-        parent[py] = px;
-    }
-    else {
-        // rank[px] == rank[py]
-        parent[px] = py; 
-        ++rank[py];
-    }
+    parent[px] = py;
 }
 
 int main(){
