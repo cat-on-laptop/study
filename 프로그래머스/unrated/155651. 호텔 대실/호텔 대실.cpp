@@ -8,7 +8,6 @@ int imos[1500];
 
 int solution(vector<vector<string>> book_time) {
     for(const vector<string> arr: book_time) {
-        // int t1 = stoi(arr[0].substr(1,3)) * 60 + stoi(arr[0].substr(4, 6)) , t2 = stoi(arr[1].substr(4,6));
         int t1 = stoi(arr[0].substr(0,2)) * 60 + stoi(arr[0].substr(3,5));
         int t2 = stoi(arr[1].substr(0,2)) * 60 + stoi(arr[1].substr(3,5));
         
