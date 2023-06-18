@@ -1,4 +1,5 @@
 #include <iostream>
+#define endl '\n'
 
 using namespace std;
 
@@ -7,6 +8,7 @@ int imos[10000][13];
 int y, m, ans;
 
 int main() {
+    ios::sync_with_stdio(0), cin.tie(0);
     cin >> n;
     for(int i = 0; i < n; ++i) {
         char buff; int x, y, z, w;
