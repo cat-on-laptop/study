@@ -3,7 +3,7 @@
 using std::cin;
 using std::cout;
 
-int parent[500'005], n, m;
+int parent[500'005], rank[500'005], n, m;
 
 int find(int x) {
 	if(parent[x] == x) return x;
@@ -16,7 +16,9 @@ void merge(int x, int y) {
 
 	if(px == py) return;
 
-	parent[px] = py;
+	if(rank[px] > rank[py]) parent[py] = px;
+	else if(rank[px] < rank[py]) parent[px] = py;
+	else parent[px] = py, rank[py]++;
 }
 
 int main () {
@@ -25,14 +27,17 @@ int main () {
 	cin >> n >> m;
 
 	for(int i = 1; i <= n; ++i) parent[i] = i;
-	int x, y, rst = 0;
+	int x, y;
 	for(int i = 0; i < m; ++i) {
 		cin >> x >> y;
-		if(find(x) == find(y) && !rst) rst = i + 1;
+		if(find(x) == find(y)) {
+			cout << i + 1;
+			return 0;
+		}
 
 		else merge(x, y);
 	}
 
-	cout << rst;
+	cout << 0;
 
 }
