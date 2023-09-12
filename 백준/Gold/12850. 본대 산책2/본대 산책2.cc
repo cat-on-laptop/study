@@ -27,7 +27,7 @@ matrix_t operator*(const matrix_t& x, const matrix_t& y) {
 	for (int i = 0; i < 8; ++i) {
 		for (int j = 0; j < 8; ++j) {
 			for (int k = 0; k < 8; ++k) {
-				rst[i][j] += x[i][k] * y[j][k];
+				rst[i][j] += x[i][k] * y[k][j];
 				rst[i][j] %= MOD;
 			}
 		}
