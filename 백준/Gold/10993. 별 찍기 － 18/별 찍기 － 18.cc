@@ -3,7 +3,7 @@
 using std::cin;
 using std::cout;
 
-char arr[1024][2048]; // 높이 := 2^n - 1 넓이 := 2^(n+1) -3
+char arr[1023][2045]; // 높이 := 2^n - 1 넓이 := 2^(n+1) -3
 
 void draw(int row, int rowLen, int col, int colLen, int level) {
 	if(level & 1) { // 홀수 레벨 (좌하단 시작)
@@ -41,13 +41,13 @@ void f(int row, int col, int level) {
 
 int main() {
 	int n; cin >> n;
-	for(int i = 0; i < 1024; ++i)
-		for(int j = 0; j < 2046; ++j)
+	for(int i = 0; i < 1023; ++i)
+		for(int j = 0; j < 2045; ++j)
 			arr[i][j] = ' ';
 
 	if(n&1) f((1 << n) - 2,0,n);
 	else f(0,0,n);
-	// freopen("output.txt", "w", stdout);
+
 	// output
 	for(int i = 0; i < (1 << n) -1; ++i) {
 		if (n & 1) 
