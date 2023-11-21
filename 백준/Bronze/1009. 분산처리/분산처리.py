@@ -1,0 +1,1 @@
+print(*(lambda y: [y[i]%10 if y[i] % 10 else 10 for i in range(len(y))])((lambda x: [x[i][0]**(x[i][1]%4 if x[i][1] % 4 else 4) for i in range(len(x))])([list(map(int, input().split())) for _ in range(int(input()))])), sep='\n')
