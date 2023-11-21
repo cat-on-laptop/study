@@ -1,2 +1,1 @@
-arr = [int(input()) for _ in range(5)]
-print(sum(arr)//5, sorted(arr)[2], sep='\n')
+print(*(lambda x:[sum(x)//5, sorted(x)[2]])([int(input()) for _ in range(5)]), sep='\n')
