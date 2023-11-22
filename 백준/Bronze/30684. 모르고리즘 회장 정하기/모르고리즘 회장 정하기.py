@@ -1,0 +1,1 @@
+print(*((lambda y: [sorted(y)[0]])((lambda x : [x[i] for i in range(len(x)) if len(x[i])==3])([input() for  _ in range(int(input()))]))))
